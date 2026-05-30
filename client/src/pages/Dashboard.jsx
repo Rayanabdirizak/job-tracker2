@@ -23,7 +23,7 @@ const Dashboard = () => {
 
   const fetchJobs = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5002/api/v1/jobs", {
+      const { data } = await axios.get("https://job-tracker2.onrender.com/api/v1/jobs", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setJobs(data.jobs);
@@ -37,7 +37,7 @@ const Dashboard = () => {
   const deleteJob = async (id) => {
     if (!window.confirm("Delete this job?")) return;
     try {
-      await axios.delete(`http://localhost:5002/api/v1/jobs/${id}`, {
+      await axios.delete(`https://job-tracker2.onrender.com/api/v1/jobs/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setJobs(jobs.filter((job) => job._id !== id));
@@ -49,7 +49,7 @@ const Dashboard = () => {
   const updateJob = async () => {
     try {
       const { data } = await axios.patch(
-        `http://localhost:5002/api/v1/jobs/${editJob._id}`,
+        `https://job-tracker2.onrender.com/api/v1/jobs/${editJob._id}`,
         editJob,
         { headers: { Authorization: `Bearer ${token}` } }
       );

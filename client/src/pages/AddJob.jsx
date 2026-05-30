@@ -18,7 +18,7 @@ const AddJob = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5002/api/v1/jobs", form, {
+      await axios.post("https://job-tracker2.onrender.com/api/v1/jobs", form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       navigate("/dashboard");

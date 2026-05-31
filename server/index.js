@@ -7,7 +7,7 @@ const app = express();
 
 // Fix CORS
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173", "https://job-tracker2-jade.vercel.app"],
   credentials: true,
 }));
 
